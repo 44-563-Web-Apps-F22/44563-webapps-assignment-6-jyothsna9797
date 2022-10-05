@@ -20,28 +20,53 @@
 
 
 <p id="result">This text will be replaced </p>
-
 <script> 
-var correct = 0
-var wrong = 0
-function checkGuess(){
-    console.log("Getting form values")
-    musician_name = document.getElementById("musician_name").value
-    musician_guess = document.getElementById("guess_musician").value
-    
-    
-    out = document.getElementById("result")
-    if(musician_name == musician_guess){
-        correct = correct + 1
-        alert("You got it right")
-        out.innerHTML = "correct count "+correct
-    } else {
-        wrong = wrong + 1
-        alert("Wrong Musician")
-        out.innerHTML = "wrong count" + wrong
+    var correct = 0
+    var wrong = 0
+    function checkGuess(){
+        console.log("Getting form values")
+        musician_name = document.getElementById("musician_name").value
+        musician_guess = document.getElementById("guess_musician").value
+        
+        
+        out = document.getElementById("result")
+        if(musician_name == musician_guess){
+            correct = correct + 1
+            alert("You got it right")
+            out.innerHTML = "correct count "+correct
+        } else {
+            wrong = wrong + 1
+            alert("Wrong Musician")
+            out.innerHTML = "wrong count" + wrong
+        }
     }
-}
-</script>
+    </script>
+
+<div class="container">
+    <img src="antlion_image.png" alt="Antlions" height="100px" width="100px" onclick="swapImage()" id="Image">
+    <input type="button" onclick="swapImage()" value="Swapping Images">
+    <script>
+        var useImage = 1
+        function swapImage() {
+            switch(useImage) {
+                case 1:
+                    document.getElementById("Image").src = "ringworm_image.png"
+                    useImage += 1
+                    break
+                case 2:
+                    document.getElementById("Image").src = "termites_image.png"
+                    useImage += 1
+                    break
+                case 3:
+                    document.getElementById("Image").src = "antlion_image.png"
+                    useImage += 1
+                    break
+            }
+        }
+    </script>
+</div>
+
+
 
 </body>
 </html> 
