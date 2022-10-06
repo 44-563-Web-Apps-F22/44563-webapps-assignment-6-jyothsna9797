@@ -9,12 +9,14 @@
 <h2>Getting input</h2>
 
 <form>
-    <label for="musician_name">Enter the secret musician name </label>
-    <input type ="password" id="musician_name" name="musician_name" value="John Lennon"> <br>
-
-    <label for="guess_musician">Guess the musician</label>
-    <input type ="text" id="guess_musician" name="guess_musician" autofocus> <br>
- 
+    <div>
+        <label for="musician_name">Enter the secret musician name </label>
+        <input type ="password" id="musician_name" name="musician_name" value="John Lennon"> <br>
+    </div> 
+    <div>
+        <label for="guess_musician">Guess the musician</label>
+        <input type ="text" id="guess_musician" name="guess_musician" autofocus> <br>
+    </div>
     <input type="button" onclick="checkGuess()" value="Check the guess" class="checkWrongs">
 </form>
 
@@ -28,8 +30,7 @@
         console.log("Getting form values")
         musician_name = document.getElementById("musician_name").value
         musician_guess = document.getElementById("guess_musician").value
-        
-        
+
         out = document.getElementById("result")
         if(incorrect_values > 3) {
             document.getElementsByClassName("checkWrongs").onclick = function doneWithGame() { alert("Sorry, game over.")};
@@ -38,12 +39,12 @@
             correct = correct + 1
             incorrect_values = 0
             alert("You got it right")
-            out.innerHTML = "correct count "+correct
+            out.innerHTML =  "Correct Guess: " + correct + " Wrong Guess: " + wrong
         } else {
             wrong = wrong + 1
             incorrect_values += 1
             alert("Wrong Musician")
-            out.innerHTML = "wrong count" + wrong
+            out.innerHTML = result.innerHTML = "Correct Guess: " + correct + " Wrong Guess: " + wrong
         }
     }
     </script>
