@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Working with javascript loops</title>
+    </head>
+ 
+<body>
+
+<h2>Jyothsna Pamarthi computes discounts</h2>
+
+<form>
+    <label for="base_amount">Enter base amount</label>
+    <input type ="number" id="base_amount" name="base_amount" value=20> <br>
+
+    <label for="second_value">Enter the discount percentage.</label>
+    <input type ="number" id="second_value" name="second_value" value="10"> <br>
+
+    <input type="button" onclick="discount()" value="Apply discount">
+</form>
+
+<p id="result">The results will appear here</p>
+<script> 
+    function discount (){
+        console.log("Getting form values")
+        base_value = document.getElementById("base_amount").value
+        disc_percentage = document.getElementById("second_value").value
+        
+        let result = ""
+        let calVal
+    
+        for (calVal=1; calVal<6; calVal++) {
+            let discount = (base_value*calVal) - ((base_value*calVal) * disc_percentage/100)
+            result = result + " " + discount
+        }
+        document.getElementById("result").innerHTML = "Discounted amounts for base  "+base_value+" are " + result
+    
+    }
+    </script>
+<div class="container">
+    <form>
+        <div class="form-group">
+            <input type="radio" onclick="chooseOp()" value="times" id="option-one" name="arthimetic">
+            <label for="option-1">*</label> 
+        </div>
+        <div class="form-group">
+            <input type="radio" onclick="chooseOp()" value="divide" id="option-two" name="arthimetic">
+            <label for="option-2">/</label>
+        </div>
+        <div class="form-group">
+            <input type="radio" onclick="chooseOp()" value="exponent" id="option-three" name="arthimetic">
+            <label for="option-3">**</label>
+        </div>
+    </form>
+</div>
+<div id="results">Updated will be shown here</div>
+
+<script>
+    function chooseOp() {
+        let times = document.getElementById("option-one")
+        let divide = document.getElementById("option-two")
+        let exponent = document.getElementById("option-three")
+        let final_result = 0
+        let b_val = document.getElementById("base_amount").value
+        let disc_val = document.getElementById("second_value").value
+        if(times.checked){
+            final_result = b_val * disc_val
+            
+        }else if(divide.checked){
+            final_result = b_val/disc_val
+            
+        }else if(exponent.checked){
+            final_result = b_val**disc_val
+            
+        }
+        document.getElementById("results").innerHTML = final_result;
+        
+    }
+</script>
+
+
+
+</body>
+</html> 
