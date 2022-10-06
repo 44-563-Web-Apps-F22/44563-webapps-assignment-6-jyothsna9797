@@ -69,10 +69,11 @@
         vacation_city = document.getElementById("city").value
         vacation_price = document.getElementById("price").value
 
-        my_vacation["city"] =  vacation_city
-        my_vacation["price"] = vacation_price
+        my_vacation["city"] =  " city : " + vacation_city
+        my_vacation["price"] = ", price: " + vacation_price
 
-        document.getElementById("city_price_results").innerHTML += JSON.stringify(my_vacation)
+       // document.getElementById("city_price_results").innerHTML += JSON.stringify(my_vacation)
+       document.getElementById("city_price_results").innerHTML += my_vacation["city"] + my_vacation["price"]
 
     }
 </script>
