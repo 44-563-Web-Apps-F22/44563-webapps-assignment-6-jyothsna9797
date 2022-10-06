@@ -1,12 +1,16 @@
 <!DOCTYPE html>
 <html>
     <head>
+        
         <title>Working with javascript loops</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" 
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" 
+        crossorigin="anonymous">
     </head>
  
-<body>
+<body style="background-color: yellow">
 
-<h2>Jyothsna Pamarthi computes discounts</h2>
+<h2 style="text-align: center; font-family: Verdana, Geneva, Tahoma, sans-serif; color: seagreen;">Jyothsna Pamarthi computes discounts</h2>
 
 <form>
     <label for="base_amount">Enter base amount</label>
@@ -15,10 +19,10 @@
     <label for="second_value">Enter the discount percentage.</label>
     <input type ="number" id="second_value" name="second_value" value="10"> <br>
 
-    <input type="button" onclick="discount()" value="Apply discount">
+    <input type="button" onclick="discount()" value="Apply discount" class="btn btn-success">
 </form>
 
-<p id="result">The results will appear here</p>
+<p id="result" style="text-align: left; font-family: Laila; font-weight: bold; color: red">The results will appear here</p>
 <script> 
     function discount (){
         console.log("Getting form values")
@@ -52,7 +56,7 @@
         </div>
     </form>
 </div>
-<div id="results">Updated will be shown here</div>
+<div id="results" style="text-align: left; font-family: Laila; font-weight: bold; color: violet">Updated will be shown here</div>
 
 <script>
     function chooseOp() {

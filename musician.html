@@ -7,24 +7,24 @@
         crossorigin="anonymous">
 </head>
  
-<body>
-<h1 style="text-align: center; padding: 5px; font-family: Pacifico; color: #6F38C5;">Musician guess by Jyothsna Pamarthi</h1>
+<body style="background-color: skyblue;">
+<h1 style="text-align: center; font-family: sans-serif; color: Purple;">Musician guess by Jyothsna Pamarthi</h1>
 
 
-<form>
-    <div>
+<form style="margin-left: 430px;">
+    <div class="col mb-3">
         <label for="musician_name">Enter the secret musician name </label>
         <input type ="password" id="musician_name" name="musician_name" value="John Lennon"> <br>
     </div> 
-    <div>
+    <div class="col mb-3">
         <label for="guess_musician">Guess the musician</label>
         <input type ="text" id="guess_musician" name="guess_musician" autofocus> <br>
     </div>
-    <input type="button" onclick="checkGuess()" value="Check the guess" class="checkWrongs">
+    <input type="button" onclick="checkGuess()" value="Check the guess" id="checkWrongs" class="btn btn-dark">
 </form>
 
 
-<p id="result">This text will be replaced </p>
+<p id="result" style="margin-left: 430px; font-family: sans-serif; color: red;">This text will be replaced </p>
 <script> 
     var correct = 0
     var wrong = 0
@@ -37,7 +37,7 @@
         out = document.getElementById("result")
         
         if(incorrect_values >= 3) {
-            // document.getElementsByClassName("checkWrongs").onclick = function doneWithGame() { alert("Sorry, game over.")};
+            // document.getElementsById("checkWrongs").onclick = function doneWithGame() { alert("Sorry, game over.")};
             alert("Sorry, game Over");
         }
         else if(musician_name == musician_guess){
@@ -54,7 +54,7 @@
     }
     </script>
 
-<div class="container">
+<div class="container" style="margin-left: 430px;">
     <img src="antlion_image.png" alt="Antlions" height="100px" width="100px" onclick="swapImage()" id="Image">
     <script>
         var useImage = 1
