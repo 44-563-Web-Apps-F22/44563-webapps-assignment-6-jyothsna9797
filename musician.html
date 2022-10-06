@@ -33,12 +33,18 @@
 
         out = document.getElementById("result")
         
-        if(musician_name == musician_guess){
+        if(incorrect_values >= 3) {
+            // document.getElementsByClassName("checkWrongs").onclick = function doneWithGame() { alert("Sorry, game over.")};
+            alert("Sorry, game Over");
+        }
+        else if(musician_name == musician_guess){
+            correct = correct + 1
             incorrect_values = 0
             alert("You got it right")
             out.innerHTML =  "Correct Guess: " + correct + " Wrong Guess: " + wrong
         } else {
             wrong = wrong + 1
+            incorrect_values += 1
             alert("Wrong Musician")
             out.innerHTML = result.innerHTML = "Correct Guess: " + correct + " Wrong Guess: " + wrong
         }
